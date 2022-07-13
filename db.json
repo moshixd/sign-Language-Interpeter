@@ -1,0 +1,35 @@
+{ "translations": [
+    {
+      "id": 1,
+      "username": "Test",
+      "translations": [
+        "translation 1",
+        "translation 2",
+        "translation 3",
+        "translation 4",
+        "translation 5",
+        "translation 6",
+        "translation 7",
+        "translation 8",
+        "translation 9",
+        "translation 10"
+      ]
+    },
+    {
+      "id": 1,
+      "username": "Test",
+      "translations": [
+        "translation 1",
+        "translation 2",
+        "translation 3",
+        "translation 4",
+        "translation 5",
+        "translation 6",
+        "translation 7",
+        "translation 8",
+        "translation 9",
+        "translation 10"
+      ]
+    }
+  ]
+}
