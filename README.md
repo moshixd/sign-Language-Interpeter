@@ -1,3 +1,11 @@
+# Sign Language translator
+
+## Good to know!
+
+### API
+
+- https://everythingfonts.com/testdrive/mzUyooKjh99fgpSOEg7PsweF?text=[insert_text_to_translate]
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
