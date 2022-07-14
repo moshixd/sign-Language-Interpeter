@@ -13,14 +13,14 @@
         "translation 8",
         "translation 9",
         "translation 10"
-      ],
-      "session": "Time"
+      ]
     },
+
     {
       "id": 1,
       "username": "Test",
       "translations": [
-        
+
       ],
       "session": {
         "Time" : "",
