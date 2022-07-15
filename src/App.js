@@ -109,7 +109,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <footer>
-          <NavLink to="/login"> login</NavLink>
+          <NavLink to="/login"> login </NavLink>
           <NavLink to="/translation"> translation</NavLink>
           <NavLink to="/profile"> profile</NavLink>
         </footer>

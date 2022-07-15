@@ -1,9 +1,27 @@
-import React from 'react'
+import { useForm } from 'react-hook-form'
+import NavBar from './reused/NavBar'
+
 
 const LoginPage = ({props, onClick}) => {
 
+  const {register, handleSubmit, formState: {errors}} = useForm()
+
+  const onSubmit = (data) => {
+    console.log(data);
+  }
+  
   return (
     <>
+    <NavBar />
+    </>
+
+
+)
+}
+
+export default LoginPage
+
+{/*     
       <div>login page</div>
       <input type="text" placeholder='enter username' />
       <button onClick={onClick}> submit</button>
@@ -27,9 +45,4 @@ const LoginPage = ({props, onClick}) => {
         </ul>
 
         
-      </div>
-    </>
-  )
-}
-
-export default LoginPage
+      </div> */}

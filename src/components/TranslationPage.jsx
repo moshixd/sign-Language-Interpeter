@@ -1,10 +1,17 @@
-import React from "react";
+import NavBar from "./reused/NavBar";
 
 const TranslationPage = () => {
 
   
 
-  return <div>Translation Page</div>;
+  return(
+    <>
+    
+    <NavBar nav={'profile page'} />
+
+    </>
+  ) 
+  
 
 };
 
