@@ -1,4 +1,4 @@
-import NavBar from "./reused/NavBar"
+import NavBar from "../components/reused/NavBar"
 
 const ProfilePage = () => {
   

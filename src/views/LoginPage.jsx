@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
-import NavBar from './reused/NavBar'
+import LoginForm from '../components/LoginForm'
+import NavBar from '../components/reused/NavBar'
 
 
 const LoginPage = ({props, onClick}) => {
@@ -13,6 +14,7 @@ const LoginPage = ({props, onClick}) => {
   return (
     <>
     <NavBar />
+    <LoginForm />
     </>
 
 

@@ -1,9 +1,10 @@
 import "./App.css";
+import 'animate.css'
 
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import TranslationPage from "./components/TranslationPage";
-import ProfilePage from "./components/ProfilePage";
-import LoginPage from "./components/LoginPage";
+import TranslationPage from "./views/TranslationPage";
+import ProfilePage from "./views/ProfilePage";
+import LoginPage from "./views/LoginPage";
 import { useEffect, useState } from "react";
 
 function App() {

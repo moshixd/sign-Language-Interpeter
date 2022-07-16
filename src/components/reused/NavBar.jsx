@@ -1,4 +1,5 @@
 import '../css/NavBar.css'
+import logo from './Logo.png'
 
 const NavBar = ({nav, icon}) => {
 
@@ -8,8 +9,8 @@ const NavBar = ({nav, icon}) => {
     <>
     <div className='container'>
         {/* Icon */}
-        <div className='logo'>
-          <img src="../public/images/Logo.png" alt='logo'/>
+        <div className='picture'>
+          <img id="logo-picture"src={logo} alt='logo'/>
         </div>
         <div className='icon'>
             {icon ? <button> Home</button> : ''}
