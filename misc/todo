@@ -21,7 +21,11 @@ LOGIN:
 - There must also be a button to clear the translations. This should “delete” in your API and no longer display
   on the profile page.
 - Delete from local when delete button!
-- Problems:
 - The Logout button should clear all the storage and return to the start page
 
-TODO: Setup API - https://github.com/dewald-els/noroff-assignment-api
+TODO: Setup API - https://github.com/dewald-els/noroff-assignment-api ✅
+
+Note:
+
+- All GET endpoints are open. Any other method POST, PUT, PATCH and DELETE is protected with the X-API-KEY header.
+- Fix .env -- Currently undefined

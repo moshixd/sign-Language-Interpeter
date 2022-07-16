@@ -4,7 +4,7 @@
 
 ### API
 
-- https://everythingfonts.com/testdrive/mzUyooKjh99fgpSOEg7PsweF?text=[insert_text_to_translate]
+- https://sign-language-translation-asl.herokuapp.com/translations
 
 ### FIGMA & DrawIO
 

@@ -1,8 +1,12 @@
-import React from 'react'
+import NavBar from "./reused/NavBar"
 
 const ProfilePage = () => {
+  
   return (
-    <div>Profile Page</div>
+    <>
+      <NavBar icon={true} nav={'log out'} />
+    </>
+    
   )
 }
 
