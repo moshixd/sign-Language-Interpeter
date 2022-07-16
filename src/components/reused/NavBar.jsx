@@ -8,6 +8,9 @@ const NavBar = ({nav, icon}) => {
     <>
     <div className='container'>
         {/* Icon */}
+        <div className='logo'>
+          <img src="../public/images/Logo.png" alt='logo'/>
+        </div>
         <div className='icon'>
             {icon ? <button> Home</button> : ''}
         </div>
