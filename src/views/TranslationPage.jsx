@@ -1,18 +1,12 @@
 import NavBar from "../components/reused/NavBar";
 
-const TranslationPage = () => {
-
-  
-
-  return(
+const TranslationPage = ({ user }) => {
+  console.log("translation page:", user);
+  return (
     <>
-    
-    <NavBar nav={'profile page'} />
-
+      <NavBar nav={"profile page"} />
     </>
-  ) 
-  
-
+  );
 };
 
 export default TranslationPage;
