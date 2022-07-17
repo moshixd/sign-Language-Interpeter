@@ -9,8 +9,14 @@ import { useEffect, useState } from "react";
 
 function App() {
   // const API_URL = process.env.API_URL;
-  // const API_KEY = process.env.API_URL;
-  // const NODE_ENV = process.env.API_URL;
+  // const API_KEY = process.env.API_KEY;
+  // const NODE_ENV = process.env.NODE_ENV;
+
+  // console.log(`
+  // API_URL: ${API_URL}
+  // API_KEY: ${API_KEY}
+  // NODE_ENV: ${NODE_ENV}
+  // `);
 
   const API_URL =
     "https://sign-language-translation-asl.herokuapp.com/translations/";
@@ -98,21 +104,28 @@ function App() {
     setUsers(...unChangedUsers, updatedUser);
   };
 
+  /**
+   * Login
+   *
+   * @param {*} param0
+   */
   const onLogin = async ({ username }) => {
-    const userObj = await fetchUser(username);
+    // fetch username
+    let userObj = await fetchUser(username);
 
     // if user doesn't exist
     if (Object.keys(userObj).length === 0) {
-      const newUser = await addUser(username);
+      userObj = await addUser(username);
 
-      setCurrentUser(newUser);
-      console.log("setting user as:", newUser);
+      console.log(users);
+
+      setCurrentUser(userObj);
 
       // if user exist
-    } else {
-      console.log("setting user as:", userObj);
-      setCurrentUser(userObj);
-    }
+    } else setCurrentUser(userObj);
+
+    console.log("setting user as:", userObj);
+    console.log("user set as:", userObj);
   };
 
   return (

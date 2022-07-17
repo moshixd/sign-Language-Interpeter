@@ -10,7 +10,7 @@ const usernameConfig = {
   minLength: 3,
 };
 
-const LoginForm = ({ onSubmit }) => {
+const Form = ({ onSubmit, header, placeholder }) => {
   // Hooks
   // Destructure.
   const {
@@ -44,11 +44,11 @@ const LoginForm = ({ onSubmit }) => {
       <h2>What's your name?</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor={header}>{header}:</label>
           <input
             type="text"
-            placeholder="name@mail.com"
-            {...register("username", usernameConfig)}
+            placeholder={placeholder}
+            {...register(header, usernameConfig)}
           />
           {errorMessage}
         </fieldset>
@@ -62,4 +62,4 @@ const LoginForm = ({ onSubmit }) => {
   );
 };
 
-export default LoginForm;
+export default Form;

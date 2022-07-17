@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { navigate, useNavigate } from "react-router-dom";
 
-import LoginForm from "../components/LoginForm";
+import Form from "../components/Form";
 import NavBar from "../components/reused/NavBar";
 
 const LoginPage = ({ props, onLogin }) => {
@@ -18,7 +18,7 @@ const LoginPage = ({ props, onLogin }) => {
   return (
     <>
       <NavBar />
-      <LoginForm onSubmit={onLogin} />
+      <Form onSubmit={onLogin} header={"username"} placeholder={"username"} />
     </>
   );
 };
