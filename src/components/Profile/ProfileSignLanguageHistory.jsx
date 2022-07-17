@@ -6,7 +6,7 @@ const ProfileSignLanguageHistory = ({ orders }) => {
   ));
   return (
     <section>
-      <h4>Your order history</h4>
+      <h4>Your signlanguage history</h4>
       <ul>{orderList}</ul>
     </section>
   );

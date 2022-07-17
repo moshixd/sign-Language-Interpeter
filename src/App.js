@@ -7,16 +7,25 @@ import LoginPage from "./views/LoginPage";
 import { useEffect, useState } from "react";
 
 function App() {
-   const API_URL = process.env.API_URL;
-   const API_KEY = process.env.API_URL;
-   const NODE_ENV = process.env.API_URL;
+  //  const API_URL = process.env.API_URL;
+  //   const API_KEY = process.env.API_KEY;
+  //  const NODE_ENV = process.env.NODE_ENV;
+  const API_KEY =
+    "mcxjgprvtpryfympjuuhmjmzqngrtmkdjkwhwhemmsnyvaanypwjvkuusrsjnveb";
+  const NODE_ENV = "production";
+  const API_URL =
+    "https://sign-language-translation-asl.herokuapp.com/translations/";
+  console.log(NODE_ENV);
+
 
   const [users, setUsers] = useState([]);
+
 
   useEffect(() => {
     const getUserObjects = async () => {
       const usersFromServer = await fetchUsers();
       setUsers(usersFromServer);
+      console.log(users);
     };
     getUserObjects();
   }, []);
@@ -84,6 +93,20 @@ function App() {
     setUsers(...unChangedUsers, updatedUser);
   };
 
+  const checkForUser = async (username) => {
+    try {
+      // Line 9 does not need createHeaders because it's only reading from database.
+      const response = await fetch(`${API_URL}?username=${username}`);
+      if (!response.ok) {
+        throw new Error("Could not complete request!");
+      }
+      const data = await response.json();
+      return [null, data];
+    } catch (error) {
+      return [error.message, []];
+    }
+  };
+
   const onLogin = (event) => {
     // 1. finns hakim?
     // true: fetchUser(hakim.id)
@@ -100,7 +123,7 @@ function App() {
             element={<LoginPage onClick={onLogin} props={{ users }} />}
           />
           <Route path="/translation" element={<TranslationPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage props={users} />} />
         </Routes>
         <footer>
           <NavLink to="/login"> login </NavLink>
