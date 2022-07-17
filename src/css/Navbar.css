@@ -1,12 +1,12 @@
 .container {
   background-color: #ffc75f;
   display: flex;
+  flex-direction: row;
   max-height: fit-content;
 }
 
 .icon {
-  margin-left: 5rem;
-  margin-right: 8rem;
+  margin: 2rem 8rem 2rem 5rem;
 }
 
 .button {

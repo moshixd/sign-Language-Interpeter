@@ -1,21 +1,15 @@
 import "./App.css";
 
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import TranslationPage from "./components/TranslationPage";
-import ProfilePage from "./components/ProfilePage";
-import LoginPage from "./components/LoginPage";
+import TranslationPage from "./views/TranslationPage";
+import ProfilePage from "./views/ProfilePage";
+import LoginPage from "./views/LoginPage";
 import { useEffect, useState } from "react";
 
 function App() {
-  // const API_URL = process.env.API_URL;
-  // const API_KEY = process.env.API_URL;
-  // const NODE_ENV = process.env.API_URL;
-
-  const API_URL =
-    "https://sign-language-translation-asl.herokuapp.com/translations/";
-  const API_KEY =
-    "mcxjgprvtpryfympjuuhmjmzqngrtmkdjkwhwhemmsnyvaanypwjvkuusrsjnveb";
-  const NODE_ENV = "production";
+   const API_URL = process.env.API_URL;
+   const API_KEY = process.env.API_URL;
+   const NODE_ENV = process.env.API_URL;
 
   const [users, setUsers] = useState([]);
 
