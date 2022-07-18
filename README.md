@@ -1,5 +1,37 @@
 # Sign Language translator
 
+# Disclaimer/Postmortem
+
+We did manage to get the app to a point where it:
+
+- could login
+- translate signs
+- save translations to the API
+- save session
+- context API
+- display latest translations (without limit of 10/ also needing to manually update)
+- logout (clearing session)
+
+what we didn't get to finish:
+
+- display only 10 of the most recent translations
+- propper css
+- home/profile button navigation
+- delete translations
+
+what went wrong:
+
+- We didn't save smaller features in our git (this is the main reason for us submitting such a poor assignment)
+- not following the instructions/examples given by the course material
+
+lessons learned:
+
+- Making sure to follow the design-patterns that already existed
+- Creating feauture branches (pushing smaller commits)
+- following the already established
+
+in the future we will make sure to learn from our mistakes and try our best to follow best practices.
+
 # Title
 
 Sign language interpreter.
@@ -20,18 +52,17 @@ Create a .env in the root of your project.
 
 In .gitignore file under #misc write .env
 
-
 ## Follow the steps to deploy your react app to Heroku.
 
 Install heroku cli and create an heroku account.
 
 This must be done in the root of your project directory(
 
-   heroku login
-   heroku create --buildpack mars/create-react-app
-   git add .
-   git commit -m "DEPLOY: Heroku buildpack"
-   git push heroku master # Could also be main depending on your setup.
+heroku login
+heroku create --buildpack mars/create-react-app
+git add .
+git commit -m "DEPLOY: Heroku buildpack"
+git push heroku master # Could also be main depending on your setup.
 
 )
 
@@ -53,9 +84,8 @@ Appliction for translating modern english with 26 letters to signlanguage.
 
 This will open a new Webpage in your browser at localhost:xxxx. Remember to use your React and Redux browser extentions.
 
-
 ## Contributers
- 
+
 PH (@moshixd)
 SA (@salahabdinor)
 NP (@nicolaspalaciosdiaz)

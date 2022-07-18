@@ -1,10 +1,4 @@
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-
-import { storageSave } from "../utils/storage";
-
-// import { STORAGE_KEY_USER } from "../../const/storageKeys";
 
 const usernameConfig = {
   required: true,
@@ -20,9 +14,6 @@ const Form = ({ onSubmit, header, placeholder }) => {
     formState: { errors },
   } = useForm();
 
-  // Local states
-  // const [apiError, setApiError] = useState(null);
-
   // errorMessage function / Render Functions.
   const errorMessage = (() => {
     if (!errors.username) {
@@ -36,7 +27,6 @@ const Form = ({ onSubmit, header, placeholder }) => {
     }
   })();
 
-  // jsx = reacts html.
   return (
     <>
       <h2>What's your name?</h2>
@@ -49,14 +39,9 @@ const Form = ({ onSubmit, header, placeholder }) => {
             {...register(header, usernameConfig)}
           />
           {errorMessage}
-          
-              <button  type="submit">
-                Login
-              </button>
-          
+
+          <button type="submit">Login</button>
         </fieldset>
-        {/* {loading && <p>Logging in...</p>} */}
-        {/* {apiError && <p>{apiError}</p>} */}
       </form>
     </>
   );

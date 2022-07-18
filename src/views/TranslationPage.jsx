@@ -23,8 +23,6 @@ const TranslationPage = ({ user }) => {
     }
 
     setTranslation([...signArr]);
-
-    console.log("translation", translation);
   };
 
   return (

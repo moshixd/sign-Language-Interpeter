@@ -6,28 +6,14 @@ import TranslationPage from "./views/TranslationPage";
 import ProfilePage from "./views/ProfilePage";
 import LoginPage from "./views/LoginPage";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-import { storageSave, storageRead, storageDelete } from "./utils/storage";
+import { storageSave, storageRead } from "./utils/storage";
 import { STORAGE_KEY_USER } from "./components/const/storageKeys";
 
 function App() {
-  // const API_URL = process.env.API_URL;
-  // const API_KEY = process.env.API_KEY;
-  // const NODE_ENV = process.env.NODE_ENV;
-
-  // console.log(`
-  // API_URL: ${API_URL}
-  // API_KEY: ${API_KEY}
-  // NODE_ENV: ${NODE_ENV}
-  // `);
-
-  const API_URL =
-    "https://sign-language-translation-asl.herokuapp.com/translations/";
-  const API_KEY =
-    "mcxjgprvtpryfympjuuhmjmzqngrtmkdjkwhwhemmsnyvaanypwjvkuusrsjnveb";
-  const NODE_ENV = "production";
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const NODE_ENV = process.env.REACT_APP_NODE_ENV;
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(storageRead(STORAGE_KEY_USER));
 
@@ -38,7 +24,7 @@ function App() {
     };
     getUserObjects();
   }, []);
-  
+
   // fetch all users
   const fetchUsers = async () => {
     const res = await fetch(API_URL);
@@ -72,12 +58,10 @@ function App() {
 
     const data = await res.json();
 
-    console.log("created user:", data);
-
     setUsers([...users, data]);
   };
 
-  // Delete translations for specific user
+  // Delete translations for specific user (Not used)
   const deleteTranslations = async (id) => {
     const res = await fetch(API_URL + "/" + id, {
       method: "Patch",
@@ -114,9 +98,6 @@ function App() {
    * @param {*} param0
    */
   const onLogin = async ({ username }) => {
-
-    console.log(username);
-
     // fetch username
     let userObj = await fetchUser(username);
 
@@ -124,26 +105,22 @@ function App() {
     if (Object.keys(userObj).length === 0) {
       userObj = await addUser(username);
 
-      console.log(users);
-
       setCurrentUser(userObj);
 
       // if user exist
     } else setCurrentUser(userObj);
 
-    console.log("setting user as:", userObj);
-    console.log("user set as:", userObj);
-
     storageSave(STORAGE_KEY_USER, userObj);
-
-
   };
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<LoginPage user={currentUser} onLogin={onLogin} />} />
+          <Route
+            path="/login"
+            element={<LoginPage user={currentUser} onLogin={onLogin} />}
+          />
           <Route
             path="/translation"
             element={<TranslationPage user={currentUser} />}
