@@ -8,6 +8,41 @@ Sign language interpreter.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Connect project to Git.
+
+## .env cofiguration
+
+This must be done in the root of your project directory
+
+The same place you find the package.json file
+
+Create a .env in the root of your project.
+
+In .gitignore file under #misc write .env
+
+
+## Follow the steps to deploy your react app to Heroku.
+
+Install heroku cli and create an heroku account.
+
+This must be done in the root of your project directory(
+
+   heroku login
+   heroku create --buildpack mars/create-react-app
+   git add .
+   git commit -m "DEPLOY: Heroku buildpack"
+   git push heroku master # Could also be main depending on your setup.
+
+)
+
+Create an API from https://github.com/dewald-els/noroff-assignment-api change it's name. Open the api, navigate to setting.
+Open upp Reveal Config Vars.
+Create variables API_KEY and NODE_ENV.
+Set API_KEY, you can find a random api key generator onlie.
+Set NODE_ENV to production.
+
+in .env set the values API_KEY and NODE_ENV.
+
 ## Install
 
 npm install
@@ -16,7 +51,8 @@ npm install
 
 Appliction for translating modern english with 26 letters to signlanguage.
 
-This will open a new Webpage in your browser at localhost:xxxx. Remember to use your React and Redux browser extentions
+This will open a new Webpage in your browser at localhost:xxxx. Remember to use your React and Redux browser extentions.
+
 
 ## Contributers
  
